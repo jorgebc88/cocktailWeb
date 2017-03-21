@@ -28,9 +28,8 @@
 			<label for="cocktailIngredient" class="col-sm-10 control-label">'</label>
 			<div class="col-sm-offset-2" id="ingredientInput{{ingredientsQuantity}}">
 	 			<select class="custom-select" id="cocktailBeverage{{ingredientsQuantity}}" ng-model="beverage[ingredientsQuantity]">
-	 		 		<option ng-repeat="option in drinks" value="{{option}}">{{option.drinkName}}</option>
+	 		 		<option ng-repeat="option in drinks" value="{{option.drinkId}}">{{option.drinkName}}</option>
 	  			</select>
-
 				<input type="text" id="cocktailQuantity" placeholder="Quantity" ng-model="quantity[ingredientsQuantity]">
 			</div>
 		</div>

@@ -22,6 +22,7 @@ app.controller('cocktailController', ['cocktailService','drinkService', '$scope'
 
 	drinkService.listDrinks().then(function(response){
 		$scope.drinks = response.data;
+		console.log($scope.drinks);
 
 	})
 	cocktailService.listCocktails().then(function(response){
@@ -36,7 +37,7 @@ app.controller('cocktailController', ['cocktailService','drinkService', '$scope'
 		console.log("Save in progress" + $scope.beverage);
 		for (var i = $scope.beverage.length - 1; i >= 0; i--) {
 			var ingredient = {quantity:  $scope.quantity[i],
-								drink: $scope.beverage[i]};
+								drinkId: $scope.beverage[i]};
 								console.log(ingredient);
 			$scope.cocktail.ingredients[i] = ingredient;
 		}
