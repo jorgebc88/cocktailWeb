@@ -1,0 +1,26 @@
+<div class='container'>
+	<div class="row">
+	  	<div class="col-sm-8">		
+	  		<h3>Cocktail's Table.</h3>
+		</div>
+	</div>
+	<table class="table table-responsive table-hover" id="cocktailTable">
+		<thead>
+			<tr>
+				<th>Cocktail Name</th>
+				<th>Cocktail Type</th>
+				<th>Cocktail Glass</th>
+				<th>Ingredients</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="x in cocktails" class="clickable-row" ng-click="clicked(x)">
+				<td>{{ x.cocktailName }}</td>			
+				<td>{{ x.cocktailType }}</td>			
+				<td>{{ x.glassType }}</td>			
+				<td></td>			
+			</tr>
+		</tbody>
+	</table>
+</div>
