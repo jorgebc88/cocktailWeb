@@ -22,9 +22,13 @@ app.controller('cocktailController', ['cocktailService','drinkService', '$scope'
 
 	drinkService.listDrinks().then(function(response){
 		$scope.drinks = response.data;
-		console.log($scope.drinks);
-
+		$scope.Questions = [
+	    {
+	        "Id": $scope.ingredientsQuantity,
+	        "Options": $scope.drinks}
+	    ];
 	})
+
 	cocktailService.listCocktails().then(function(response){
 		$scope.cocktails = response.data;
 	})
@@ -34,32 +38,34 @@ app.controller('cocktailController', ['cocktailService','drinkService', '$scope'
 	}
 
 	$scope.saveCocktail = function(){
-		console.log("Save in progress" + $scope.beverage);
+		console.log('Save in progress' + $scope.beverage);
 		for (var i = $scope.beverage.length - 1; i >= 0; i--) {
 			var ingredient = {quantity:  $scope.quantity[i],
-								drinkId: $scope.beverage[i]};
-								console.log(ingredient);
+								drinkName: $scope.beverage[i].drinkName};
+			console.log(ingredient);
 			$scope.cocktail.ingredients[i] = ingredient;
 		}
-		console.log("Drink:" + $scope.beverage[i])
 		cocktailService.saveCocktail($scope.cocktail).then(function(response){
 			console.log("Save successful:" );
 		})
 	}
 
 	$scope.refreshCocktails = function(){
-		console.log("Refresh in progress");
 		cocktailService.listCocktails().then(function(response){
 			$scope.cocktails = response.data;
 		})
 	}
 
 	$scope.addAnotherIngredient = function(){
-    	var itm = document.getElementById("ingredientInput" + $scope.ingredientsQuantity);
-	    var cln = itm.cloneNode(true);
-	    document.getElementById("ingredientDiv").appendChild(cln);
-		$scope.ingredientsQuantity++;
-
+		$scope.ingredientsQuantity++;	
+		$scope.AddSelect();
 	}
-
+    
+    $scope.AddSelect = function() {
+    	console.log($scope.quantity);
+        $scope.Questions.push({
+        	"Id" : $scope.ingredientsQuantity,
+          	"Options": $scope.drinks
+        });
+    };
 }]);

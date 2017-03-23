@@ -12,9 +12,14 @@ app.service('drinkService',['$http', function($http) {
 		return $http.post('http://localhost:8080/cocktail-1.0-SNAPSHOT/drinks/', drink);
 	};
 
+	var getDrinkById = function(drinkId){
+		console.log("List drinks");
+		return $http.get('http://localhost:8080/cocktail-1.0-SNAPSHOT/drinks/' + drinkId);
+	};
 	return {
 	listDrinks : listDrinks,
-	saveDrink : saveDrink
+	saveDrink : saveDrink,
+	getDrinkById : getDrinkById
 	}
 
 
