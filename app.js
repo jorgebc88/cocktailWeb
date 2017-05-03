@@ -9,6 +9,10 @@ app.config(['$routeProvider', function($routeProvider) {
 		templateUrl : "addCocktail.html",
 		controller: 'cocktailController'
 	})
+	.when("/addDrink", {
+		templateUrl : "addDrink.html",
+		controller: 'drinkController'
+	})
 	.when("/listCocktail", {
 		templateUrl : "cocktailTable.html",
 		controller: 'cocktailController'

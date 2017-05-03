@@ -33,7 +33,7 @@
 			<div class="col-sm-offset-2 col-sm-2" id="ingredientInput{{ingredientsQuantity}}" >
 			    <ul ng-repeat="question in Questions">
 			        <li>
-			            <select ng-model="beverage[question.Id]" class="form-control" ng-options="option.drinkName for option in question.Options">
+			            <select ng-model="beverage[question.Id]" class="form-control" ng-options='(option.drinkName + " "  + option.drinkBrand) for option in question.Options'>
 			            </select>
 			            <input type="text" id="cocktailQuantity" class="form-control" placeholder="Quantity" ng-model="quantity[question.Id]">
         			</li>

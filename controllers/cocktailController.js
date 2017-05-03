@@ -41,7 +41,7 @@ app.controller('cocktailController', ['cocktailService','drinkService', '$scope'
 		console.log('Save in progress' + $scope.beverage);
 		for (var i = $scope.beverage.length - 1; i >= 0; i--) {
 			var ingredient = {quantity:  $scope.quantity[i],
-								drinkName: $scope.beverage[i].drinkName};
+								drinkId: $scope.beverage[i].drinkId};
 			console.log(ingredient);
 			$scope.cocktail.ingredients[i] = ingredient;
 		}

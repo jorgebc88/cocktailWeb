@@ -24,7 +24,7 @@
 
 						<tr ng-repeat="y in x.ingredients" class="clickable-row" >
 							<td>Drink: {{ y.drinkName }}</td>			
-							<td>Quantity: {{ y.quantity }}</td>			
+							<td>Quantity: {{ y.quantity + ' ' + y.measure }}</td>			
 						</tr>
 					</table>
 				</td>			
