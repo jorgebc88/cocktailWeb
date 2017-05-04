@@ -1,0 +1,24 @@
+<div class='container'>
+	<div class="row">
+	  	<div class="col-sm-8">		
+	  		<h3>User's Table.</h3>
+		</div>
+	</div>
+	<table class="table table-responsive table-hover" id="userTable">
+		<thead>
+			<tr>
+				<th>UserName</th>
+				<th>Password</th>
+				<th>Role</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="x in users" class="clickable-row" ng-click="clicked(x)">
+				<td>{{ x.userName }}</td>			
+				<td>{{ x.password }}</td>			
+				<td>{{ x.role }}</td>			
+			</tr>
+		</tbody>
+	</table>
+</div>

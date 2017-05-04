@@ -4,7 +4,7 @@ app.service('cocktailService',['$http', function($http) {
 		console.log("List cocktails");
 		var auth = window.btoa("Jorge:123");
 	    var headers = {"Authorization": "Basic " + auth};
-	    	    console.log("-------------- JSON: " + auth)
+	    console.log("-------------- JSON: " + auth)
 
 		return $http.get('https://cocktail-jebc.herokuapp.com/cocktails/', {headers: headers});
 		//return $http.get('http://localhost:8080/cocktails/', {headers: headers});
