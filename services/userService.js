@@ -10,7 +10,10 @@ app.service('userService',['$http', function($http) {
 		console.log("Save user: ");
 		var expenseJSON = JSON.stringify(user)
 		console.log("Save user: " + expenseJSON);
-		return $http.post('http://35.188.104.70:8080/cocktail-1.0-SNAPSHOT/users/', user);
+		var auth = window.btoa("Jorge:123");		
+	    var headers = {"Authorization": "Basic " + auth};
+
+		return $http.post('http://35.188.104.70:8080/cocktail-1.0-SNAPSHOT/users/', user, {headers: headers});
 		// return $http.post('https://cocktail-jebc.herokuapp.com/users/', user);
 	};
 

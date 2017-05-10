@@ -13,7 +13,6 @@ app.service('cocktailService',['$http', function($http) {
 		console.log("CocktailJSON: " + cocktailJSON);
 		var auth = window.btoa("Jorge:123");
 	    var headers = {"Authorization": "Basic " + auth};
-	    console.log("-------------- JSON: " + auth)
 		// return $http.post('https://cocktail-jebc.herokuapp.com/cocktails/', cocktailJSON, {headers: headers});
 		return $http.post('http://35.188.104.70:8080/cocktail-1.0-SNAPSHOT/cocktails/', cocktailJSON, {headers: headers});
 	};

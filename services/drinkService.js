@@ -9,8 +9,7 @@ app.service('drinkService',['$http', function($http) {
 	var saveDrink = function(drink){
 		console.log("Save drink: ");
 		var expenseJSON = JSON.stringify(drink)
-		console.log("Save drink: " + expenseJSON);
-				var auth = window.btoa("Jorge:123");		
+		var auth = window.btoa("Jorge:123");		
 	    var headers = {"Authorization": "Basic " + auth};
 
 		return $http.post('http://35.188.104.70:8080/cocktail-1.0-SNAPSHOT/drinks/', drink, {headers: headers});
