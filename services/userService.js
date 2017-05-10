@@ -1,4 +1,4 @@
-pp.service('userService',['$http', function($http) {
+app.service('userService',['$http', function($http) {
 
 	var listUsers = function(){
 		console.log("List Users");
