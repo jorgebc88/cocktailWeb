@@ -6,8 +6,8 @@ app.service('cocktailService',['$http', function($http) {
 	    var headers = {"Authorization": "Basic " + auth};
 	    console.log("-------------- JSON: " + auth)
 
-		return $http.get('https://cocktail-jebc.herokuapp.com/cocktails/', {headers: headers});
-		//return $http.get('http://localhost:8080/cocktails/', {headers: headers});
+		// return $http.get('https://cocktail-jebc.herokuapp.com/cocktails/', {headers: headers});
+		return $http.get('http://localhost:8080/cocktails/', {headers: headers});
 	};
 
 	var saveCocktail = function(cocktail){
@@ -18,8 +18,8 @@ app.service('cocktailService',['$http', function($http) {
 		var auth = window.btoa("Jorge:123");
 	    var headers = {"Authorization": "Basic " + auth};
 	    console.log("-------------- JSON: " + auth)
-		return $http.post('https://cocktail-jebc.herokuapp.com/cocktails/', cocktailJSON, {headers: headers});
-		//return $http.post('http://localhost:8080/cocktails/', cocktailJSON, {headers: headers});
+		// return $http.post('https://cocktail-jebc.herokuapp.com/cocktails/', cocktailJSON, {headers: headers});
+		return $http.post('http://localhost:8080/cocktails/', cocktailJSON, {headers: headers});
 	};
 
 	return {
